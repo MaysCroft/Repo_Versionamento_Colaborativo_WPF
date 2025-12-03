@@ -17,6 +17,7 @@ namespace AppAgendaDeTarefas;
 public partial class MainWindow : Window
 {
     private string descricao;
+    private int i;
     private List<String> listaTarefas = new List<String>();
     
     public MainWindow()
@@ -41,6 +42,7 @@ public partial class MainWindow : Window
         {
             MessageBox.Show("Digite uma tarefa válida!");
         }
+        ContadorTarefa();
     }
     private void Limpar_lista_Click(object sender, RoutedEventArgs e)
     {
@@ -51,6 +53,7 @@ public partial class MainWindow : Window
             
             MessageBox.Show("A lista foi limpa com sucesso!", "Limpeza");
         }
+        TbxContadorTarefas.Text = String.Empty;
     }
     private void AdicionarTarefas()
     {
@@ -96,8 +99,16 @@ public partial class MainWindow : Window
             MessageBox.Show("Selecione uma tarefa para duplicar!", "Duplicar",MessageBoxButton.OK, MessageBoxImage.Information);
 
         }
-       
+        ContadorTarefa();
 
+    }
+
+    private void ContadorTarefa()
+    {
+        for (i = 1; i <= ListaTarefas.Items.Count; i++)
+        {
+            TbxContadorTarefas.Text = i.ToString();
+        }
     }
     
 }

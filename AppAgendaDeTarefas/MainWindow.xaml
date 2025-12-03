@@ -33,5 +33,6 @@
         <!-- Rodapé -->
         <TextBlock Grid.Row="2" Text="Agenda de Tarefas - Versão Base"
                    HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal"> <TextBlock Text="Total de Tarefas: " Margin="0,40,0,0"/> <TextBlock  x:Name="TbxContadorTarefas" Margin="2,40,0,0"/> </StackPanel>
     </Grid>
 </Window>
