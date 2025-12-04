@@ -14,6 +14,7 @@
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -67,16 +68,34 @@
 
             
         </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+
+                <TextBox Grid.Column="0" x:Name="TxtBusca" Margin="0,0,10,0"/>
+
+
+                <Button Grid.Column="1" Content="Buscar" Width="100"
+                        x:Name="BtnBuscar" Click="BtnBuscar_OnClick"/>
+            </Grid>
+        </StackPanel>
+
+        
+
         
         <!-- Lista -->
         <ListBox x:Name="ListaTarefas"
-                 Grid.Row="1"
+                 Grid.Row="2"
                  FontSize="16" />
 
         <!-- Rodapé -->
-        <TextBlock Grid.Row="2" Text="Agenda de Tarefas - Versão Base"
+        <TextBlock Grid.Row="3" Text="Agenda de Tarefas - Versão Base"
                    HorizontalAlignment="Center" Margin="0,10,0,0" />
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
             <TextBlock Text="Total de Tarefas: " Margin="0,40,0,0" />
             <TextBlock x:Name="TbxContadorTarefas" Margin="2,40,0,0" />
         </StackPanel>

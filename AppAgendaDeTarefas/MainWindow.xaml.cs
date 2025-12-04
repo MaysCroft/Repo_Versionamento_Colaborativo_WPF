@@ -281,5 +281,38 @@ private void BtnImportarTxt_Click(object sender, RoutedEventArgs e)
     }
 }
 
+private void BtnBuscar_OnClick(object sender, RoutedEventArgs e)
+{
+    string texto = TxtBusca.Text?.ToLower() ?? "";
+
+    // Se caixa vazia → volta a lista completa
+    if (string.IsNullOrWhiteSpace(texto))
+    {
+        AtualizarLista();
+        return;
+    }
+
+    // Filtramos pela lista original
+    var filtradas = listaTarefas
+        .Where(t => t.ToLower().Contains(texto))
+        .ToList();
+
+    // Limpa visual da ListBox
+    ListaTarefas.Items.Clear();
+
+    // Repreenche com resultados filtrados
+    foreach (var t in filtradas)
+        ListaTarefas.Items.Add(t);
+}
+
+private void AtualizarLista()
+{
+    ListaTarefas.Items.Clear();
+
+    foreach (var t in listaTarefas)
+        ListaTarefas.Items.Add(t);
+}
+
+
 }
 
